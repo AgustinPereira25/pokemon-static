@@ -15,7 +15,7 @@ const HomePage: NextPage<Props> = ({pokemons}) => {
     
     <Layout title = "Listado de Pokémons">
       
-      <div className="grid flex gap-3 px-10 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 ">
+      <div className="grid flex gap-3 px-10 grid-cols-2 sm:grid-cols-4 md:grid-cols-5 ">
         {
           pokemons.map(item => (
             <PokemonCard pokemon={item} key={item.id}/>
