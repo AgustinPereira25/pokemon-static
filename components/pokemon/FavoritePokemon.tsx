@@ -1,4 +1,3 @@
-import { Grid } from "@nextui-org/react"
 import { FavoriteCardPokemon } from "./"
 
 interface Props{
@@ -8,12 +7,12 @@ interface Props{
 export const FavoritePokemon: React.FC<Props> = ({favoritePokemons}) => {
     // console.log(favoritePokemons)
   return (
-    <Grid.Container gap={2} direction='row' justify="flex-start">
+    <div className="grid p-5 grid-cols-2 gap-3 sm:grid-cols-4 ">
         {
         favoritePokemons.map( id => (
             <FavoriteCardPokemon key= { id } id={ id } />
         ))
         } 
-    </Grid.Container>    
+    </div>
   )
 }

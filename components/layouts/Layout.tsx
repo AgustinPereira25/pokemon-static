@@ -1,5 +1,5 @@
-import Head from "next/head"
 import React from "react"
+import Head from "next/head"
 import { Navbar } from "../ui"
 
 interface Props{ 
@@ -23,12 +23,10 @@ export const Layout: React.FC<Props> = ({children, title}) => {
             <meta property="og:description" content={`Ésta es la página sobre ${ title }`} />
             <meta property="og:image" content= {`${origin}/img/banner.png`} />
         </Head>
-
+        
         <Navbar />
 
-        <main style={{
-            padding:'0px 20px'
-        }}>
+        <main className="dark:bg-black dark:text-slate-200">
             { children }
         </main>
     </>

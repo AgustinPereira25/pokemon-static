@@ -5,14 +5,19 @@ import { Pokemon } from "../interfaces";
 
 export const getPokemonInfo = async ( nameOrId:string ) => {
     
-    const id = nameOrId;
 
-    const { data } = await pokeApi.get<Pokemon>(`/pokemon/${ id }`);
+    try {
+        const id = nameOrId;
 
-    return {
-        id: data.id,
-        name: data.name,
-        sprites: data.sprites
+        const { data } = await pokeApi.get<Pokemon>(`/pokemon/${ id }`);
+    
+        return {
+            id: data.id,
+            name: data.name,
+            sprites: data.sprites
+        }        
+    } catch (error) {
+        return null;
     }
 
 }
